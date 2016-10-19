@@ -1,15 +1,16 @@
 {
   "name": "Biltraps-Grid",
   "version": "0.1.0",
-  "author":"Ajantha Bandara",
-  "email":"ajantha19991@gmail.com",
+  "author": "Ajantha Bandara",
+  "email": "ajantha19991@gmail.com",
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "latest",
-    "jshint-stylish": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-less": "latest",
     "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-watch": "latest"
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "jshint-stylish": "latest"
   }
 }

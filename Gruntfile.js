@@ -33,6 +33,13 @@ module.exports = function(grunt){
         }
       }
     },
+    sass:{
+      build:{
+        files:{
+          'dist/css/biltraps.css':"src/css/biltraps.scss"
+        }
+      }
+    },
     cssmin:{
       options:{
         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
@@ -60,6 +67,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
 
 };
