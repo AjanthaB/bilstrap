@@ -21,7 +21,7 @@ module.exports = function(grunt){
       },
       build:{
         files:{
-          'dist/js/biltraps.min.js':'src/js/biltraps.js'
+          'dist/js/billstrap.min.js':'src/js/billstrap.js'
         }
       }
     },
@@ -29,7 +29,7 @@ module.exports = function(grunt){
     less:{
       build:{
         files:{
-          'dist/css/biltraps.css':"src/css/biltraps.less"
+          'dist/css/billstrap.css':"src/css/billstrap.less"
         }
       }
     },
@@ -39,7 +39,7 @@ module.exports = function(grunt){
       },
       build:{
         files:{
-          'dist/css/biltraps.min.css':'src/css/biltraps.css'
+          'dist/css/billstrap.min.css':'dist/css/billstrap.css'
         }
       }
     }
@@ -48,7 +48,7 @@ module.exports = function(grunt){
   // ========= // CREATE TASKS =========
 
     // this default task will go through all configuration (dev and production) in each task
-    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'less']);
+  grunt.registerTask('default', ['jshint', 'less', 'cssmin', 'uglify']);
 
   // ===========================================================================
   // LOAD GRUNT PLUGINS ========================================================
@@ -56,10 +56,8 @@ module.exports = function(grunt){
   // we can only load these if they are in our package.json
   // make sure you have run npm install so our app can find these
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
-
-
 };

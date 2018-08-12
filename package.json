@@ -1,15 +1,24 @@
 {
-  "name": "Biltraps-Grid",
+  "name": "bilstrap-grid",
   "version": "0.1.0",
-  "author":"Ajantha Bandara",
-  "email":"ajantha19991@gmail.com",
+  "author": "Ajantha Bandara",
+  "email": "ironnode@gmail.com",
+  "scripts": {
+    "start": "nodemon --watch src/index.html",
+    "start:dev": "webpack-dev-server"
+  },
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "latest",
-    "jshint-stylish": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-less": "latest",
     "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-watch": "latest"
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "jshint-stylish": "latest",
+    "nodemon": "^1.18.3",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "webpack": "^4.16.1"
   }
 }
