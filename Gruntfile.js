@@ -14,7 +14,19 @@ module.exports = function(grunt){
       // when this task is run, lint the Gruntfile and all js files in src
       build: ['Gruntfile.js', 'src/**/*.js']
     },
-
+    myth: {
+      options: {
+        sourcemap: false
+      },
+      build: {
+        expand: true,
+        cwd: 'src/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'src/css/',
+        ext: '.css'
+      }
+      
+    },
     uglify:{
       options:{
          banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
@@ -29,7 +41,7 @@ module.exports = function(grunt){
     less:{
       build:{
         files:{
-          'dist/css/billstrap.css':"src/css/billstrap.less"
+          'src/css/billstrap.css':"src/css/billstrap.less"
         }
       }
     },
@@ -37,18 +49,23 @@ module.exports = function(grunt){
       options:{
         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
       },
-      build:{
-        files:{
-          'dist/css/billstrap.min.css':'dist/css/billstrap.css'
+      concat: {
+        files: {
+          'dist/css/billstrap.css': ['vendor/css/normalize.css', 'src/css/billstrap.css']
         }
+      },
+      minify: {
+        expand: true,
+        cwd: 'dist/css',
+        src: ['*.css', '!*.min.css'],
+        dest: 'dist/css',
+        ext: '.min.css'
       }
     }
   });
 
-  // ========= // CREATE TASKS =========
-
-    // this default task will go through all configuration (dev and production) in each task
-  grunt.registerTask('default', ['jshint', 'less', 'cssmin', 'uglify']);
+  // this default task will go through all configuration (dev and production) in each task
+  grunt.registerTask('default', ['less', 'myth:build', 'cssmin:concat', 'cssmin:minify']);
 
   // ===========================================================================
   // LOAD GRUNT PLUGINS ========================================================
@@ -60,4 +77,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-myth');
 };

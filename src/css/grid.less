@@ -1,0 +1,37 @@
+.container, .container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-fluid {
+  padding-right: var(@outer-margin, 20px);
+  padding-left: var(@outer-margin, 20px);
+}
+
+.b-row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: calc(var(@gutter-compensation, -7.5px));
+  margin-left: calc(var(@gutter-compensation, -7.5px));
+}
+
+.center {
+  text-align: center;
+}
+
+// xs colums definistions
+@import './xs';
+
+@import './sm';
+
+@import './md';
+
+@import './lg';
+
+
+
+
+
