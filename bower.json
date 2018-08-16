@@ -1,5 +1,5 @@
 {
-  "name": "billstrap",
+  "name": "bilstrap",
   "description": "Responsive grid system base on flex property",
   "main": "dist/css/billstrap.css",
   "authors": [
