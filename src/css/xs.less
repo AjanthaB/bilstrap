@@ -24,8 +24,8 @@
 .col-xs-offset-11, {
   box-sizing: border-box;
   flex: 0 0 auto;
-  padding-right: var(@half-gutter-width, 0.5rem);
-  padding-left: var(@half-gutter-width, 0.5rem);
+  padding-right: @half-gutter-width;
+  padding-left: @half-gutter-width;
 }
 
 .col-xs {
@@ -147,7 +147,7 @@
 }
 
 .xs-start {
-  justify-content: start;
+  justify-content: flex-start;
   text-align: start;
 }
 
@@ -157,7 +157,7 @@
 }
 
 .xs-end {
-  justify-content: end;
+  justify-content: flex-end;
   text-align: end;
 }
 

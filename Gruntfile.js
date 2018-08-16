@@ -33,7 +33,7 @@ module.exports = function(grunt){
       },
       build:{
         files:{
-          'dist/js/billstrap.min.js':'src/js/billstrap.js'
+          'dist/js/billstrap.min.js': 'dist/js/billstrap.min.js'
         }
       }
     },
@@ -65,7 +65,7 @@ module.exports = function(grunt){
   });
 
   // this default task will go through all configuration (dev and production) in each task
-  grunt.registerTask('default', ['less', 'myth:build', 'cssmin:concat', 'cssmin:minify']);
+  grunt.registerTask('default', ['less', 'myth:build', 'cssmin:concat', 'cssmin:minify', 'uglify']);
 
   // ===========================================================================
   // LOAD GRUNT PLUGINS ========================================================

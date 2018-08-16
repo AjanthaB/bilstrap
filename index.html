@@ -1,21 +1,433 @@
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The simplest flex grid in the world.">
+    <meta name="author" content="Ajantha Bandara">
     <link rel="stylesheet" href="/dist/css/billstrap.css">
   </head>
 
-  <body>
+  <style>
+    html {
+      font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    body {
+      font-size: 1rem;
+    }
 
-    <div style="background: mediumvioletred" class="container-fluid center">
-       container-fluid
-       <div class="b-row">
-          <div style="background: orange;" class="col-xs-12 col-sm-6 col-md-4">Col</div>
-          <div style="background: orange;" class="col-xs-12 col-sm-6 col-md-4">Col</div>
-          <div style="background: orange;" class="col-xs-12 col-sm-6 col-md-4">Col</div>
-       </div>
-       <div class="b-row">
-         <button class="btn bt-waves bt-light">Button</button>
-       </div>
+    .wrapper {
+      background-color: #ffffff;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    .top-header {
+      box-sizing: border-box;
+      padding: 2rem;
+      border-radius: 2px;
+    }
+
+    .billstrap {
+      font-size: 3rem;
+      white-space: nowrap;
+      margin-bottom: 0;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+    
+    .code {
+      padding: 10px;
+      background-color: #2d4059;;
+      padding: 10px;
+      color: #e6e6e6
+    }
+
+    .uppercase {
+      text-transform: uppercase
+    }
+
+    .download-btn {
+      width: 130px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .container-fluid {
+      background-color: #f6f6f6;
+    }
+    .col {
+      background: #ea5455;
+      height: 30px;
+      padding-top: 10px;
+      margin-bottom: 10px;
+    }
+    .bt-row {
+      margin-bottom: 10px;
+    }
+    section {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    code {
+      overflow-x: auto;
+      padding: 1em;
+      border: 1px solid #e6e6e6;
+      border-left-width: 5px;
+      margin: 1em 0;
+      font-size: .875em;
+      background: #2d4059;
+      white-space: pre;
+      word-wrap: normal;
+      width: 100%;
+      color: #f6f6f6;
+    }
+    @media only screen and (min-width: 48rem) {
+      .billstrap {
+        font-size: 6rem;
+        margin-bottom: 2rem;
+      }
+
+      .b-desc {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+
+  <body class="wrapper">
+    <header class="top-header">
+      <div class="bt-row xs-center">
+        <h1 class="billstrap">Billstrap</h1>
+      </div>
+      <div class="bt-row xs-center">
+        <p class="b-desc">The simplest grid system based on the flex property. No dependencies. light weight</p>
+      </div>
+      <div class="bt-row xs-center">
+        <p class="code">
+          npm install billstrap
+        </p>
+      </div>
+      <div class="bt-row xs-center">
+        <button class="btn bt-waves bt-dark download-btn uppercase">Download</button>
+        <button class="btn bt-waves bt-dark download-btn uppercase">GitHub</button>
+      </div>
+      
+    </header>
+
+    <div class=" container-fluid center">
+      <section>
+        <h2>Fluid Columns</h2>
+        <p>Columns will be resized according to screen size</p>
+        <div class="bt-row">
+          <div class="col-xs-12">
+            <div class="col">col-xs-12</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-1">
+            <div class="col">col-xs-1</div>
+            </div>
+          <div class="col-xs-11">
+            <div class="col">col-xs-11</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-2">
+            <div class="col">col-xs-2</div>
+          </div>
+          <div class="col-xs-10">
+            <div class="col">col-xs-10</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-3">
+            <div class="col">col-xs-3</div>
+          </div>
+          <div class="col-xs-9">
+            <div class="col">col-xs-9</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-4">
+            <div class="col">col-xs-4</div>
+          </div>
+          <div class="col-xs-8">
+            <div class="col">col-xs-8</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-5">
+            <div class="col">col-xs-5</div>
+          </div>
+          <div class="col-xs-7">
+            <div class="col">col-xs-7</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-6">
+            <div class="col">col-xs-6</div>
+          </div>
+          <div class="col-xs-6">
+            <div class="col">col-xs-6</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Responsive Columns</h2>
+        <p>Responsive colums will be resized according to the xs, sm, md and lg view points with specified alignments.</p>
+        <div class="bt-row">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="col">col</div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="col">col</div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="col">col</div>
+          </div>
+        </div>
+
+        <div class="bt-row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="col">col</div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="col">col</div>
+          </div>
+        </div>
+        <div class="bt-row xs-start">
+          <code>
+            &lt;div class="bt-row"&gt;
+              &lt;div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"&gt;
+                col
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </div>
+      </section>
+
+      <section>
+        <h2>Offset</h2>
+        <p>Set offset as you like </p>
+        <div class="bt-row">
+          <div class="col-xs-1 col-xs-offset-11">
+            <div class="col">col-xs-1</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-2 col-xs-offset-10">
+            <div class="col">col-xs-2</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-3 col-xs-offset-9">
+            <div class="col">col-xs-3</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-4 col-xs-offset-8">
+            <div class="col">col-xs-4</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-5 col-xs-offset-7">
+            <div class="col">col-xs-5</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-6 col-xs-offset-6">
+            <div class="col">col-xs-6</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-7 col-xs-offset-5">
+            <div class="col">col-xs-7</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-8 col-xs-offset-4">
+            <div class="col">col-xs-8</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-9 col-xs-offset-3">
+            <div class="col">col-xs-9</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-10 col-xs-offset-2">
+            <div class="col">col-xs-10</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs-11 col-xs-offset-1">
+            <div class="col">col-xs-11</div>
+          </div>
+        </div>
+        <div class="bt-row xs-start">
+          <code>
+            &lt;div class="bt-row"&gt;
+              &lt;div class="col-xs-6 col-xs-offset-6"&gt;
+                col
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </div>
+      </section>
+
+      <section>
+        <h2>Auto Width</h2>
+        <p>Add any number of columns as you like. Grid will take care of that.</p>
+        <div class="bt-row">
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+        </div>
+        <div class="bt-row">
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+          <div class="col-xs">
+            <div class="col">col</div>
+          </div>
+        </div>
+        <div class="bt-row xs-start">
+          <code>
+            &lt;div class="bt-row"&gt;
+              &lt;div class="col-xs"&gt;
+                 &lt;div&gt; col &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class="col-xs"&gt; 
+                &lt;div&gt; col &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </div>
+      </section>
+
+      <section>
+        <h2>Align to anyware</h2>
+
+        <h4>Center</h4>
+        <div class="bt-row xs-center">
+          <div class="col-xs-6">
+            <div class="col"></div>
+          </div>
+        </div>
+        <div class="bt-row xs-start">
+          <code>
+            &lt;div class="bt-row xs-center"&gt;
+              &lt;div class="col-xs-6"&gt;
+                  &lt;div&gt; col &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </div>
+
+        <h4>Start</h4>
+        <div class="bt-row xs-start">
+          <div class="col-xs-6">
+            <div class="col"></div>
+          </div>
+        </div>
+        <div class="bt-row xs-start">
+          <code>
+            &lt;div class="bt-row xs-start"&gt;
+              &lt;div class="col-xs-6"&gt;
+                  &lt;div&gt; col &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </div>
+
+        <h4>End</h4>
+        <div class="bt-row xs-end">
+          <div class="col-xs-6">
+            <div class="col"></div>
+          </div>
+        </div>
+        <div class="bt-row xs-start">
+          <code>
+            &lt;div class="bt-row xs-end"&gt;
+              &lt;div class="col-xs-6"&gt;
+                  &lt;div&gt; col &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </div>
+
+        <p>Change alignment according to the view size</p>
+        <div class="bt-row xs-start sm-center lg-end">
+          <div class="col-xs-6">
+            <div class="col"></div>
+          </div>
+        </div>
+        <div class="bt-row xs-start">
+          <code>
+            &lt;div class="bt-row xs-start sm-center lg-end"&gt;
+              &lt;div class="col-xs-6"&gt;
+                  &lt;div&gt; col &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </div>
+      </section>
+
+      <section>
+        <h2>Waves Button</h2>
+        <h4>Button Colors</h4>
+        <div class="bt-row">
+          <div class="col-xs-12 xs-center">
+            <div class="">
+              <button class="btn bt-waves bt-dark">Button</button>
+              <button class="btn bt-waves bt-light">Button</button>
+              <button class="btn bt-waves bt-danger">Button</button>
+              <button class="btn bt-waves bt-amber">Button</button>
+            </div>
+          </div>
+        </div>
+
+        <h4>Button Sizes</h4>
+        <div class="bt-row">
+          <div class="col-xs-12 xs-center">
+            <div class="">
+              <button class="btn bt-waves bt-dark">Normal</button>
+              <button class="btn btn-lg bt-waves bt-dark">Large</button>
+              <button class="btn btn-sm bt-waves bt-dark">Small</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
     </div>
+    
 
     <script type="text/javascript" src="/dist/js/billstrap.min.js"></script>
   </body>

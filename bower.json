@@ -1,0 +1,22 @@
+{
+  "name": "billstrap",
+  "description": "Responsive grid system base on flex property",
+  "main": "dist/css/billstrap.css",
+  "authors": [
+    "Ajantha Bandara"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "flex",
+    "css",
+    "billstrap"
+  ],
+  "homepage": "https://github.com/AjanthaB/BillTraps",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

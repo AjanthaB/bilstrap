@@ -1,11 +1,10 @@
 {
-  "name": "bilstrap-grid",
-  "version": "0.1.0",
+  "name": "billstrap",
+  "version": "0.1.5",
   "author": "Ajantha Bandara",
-  "email": "ironnode@gmail.com",
+  "email": "ajatha.p.bandara@gmail.com",
   "scripts": {
-    "start": "nodemon --watch src/index.html",
-    "start:dev": "webpack-dev-server"
+    "build": "grunt"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
@@ -15,11 +14,8 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-myth": "^1.1.0",
-    "jshint-stylish": "latest",
-    "nodemon": "^1.18.3",
-    "webpack-dev-server": "^3.1.4"
+    "jshint-stylish": "latest"
   },
-  "dependencies": {
-    "webpack": "^4.16.1"
-  }
+  "dependencies": {},
+  "license": "MIT"
 }
