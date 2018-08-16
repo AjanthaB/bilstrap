@@ -1,4 +1,4 @@
-# Billstrap
+# [Bilstrap](http://bistrap.com)
 
 ## Responsive grid based on flex property
 
@@ -10,19 +10,19 @@
 ### NPM
 
 ``` bash
-npm install billstrap
+npm install bilstrap
 ```
 
 ### Yarn
 
 ``` bash
-yarn add billstrap
+yarn add bilstrap
 ```
 
 ### Bower
 
 ``` bash
-bower install billstrap
+bower install bilstrap
 ```
 
 ## Development
