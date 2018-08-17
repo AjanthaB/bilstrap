@@ -1,4 +1,4 @@
-# [Bilstrap](http://bistrap.com)
+# [Bilstrap](http://bilstrap.com)
 
 ## Responsive grid based on flex property
 

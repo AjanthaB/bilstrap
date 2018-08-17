@@ -1,6 +1,6 @@
 {
   "name": "bilstrap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Ajantha Bandara",
   "email": "ajatha.p.bandara@gmail.com",
   "scripts": {
@@ -13,9 +13,10 @@
     "grunt-contrib-less": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-myth": "^1.1.0",
-    "jshint-stylish": "latest"
+    "jshint-stylish": "latest",
+    "grunt-myth": "^1.1.0"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "license": "MIT"
 }

@@ -33,7 +33,7 @@ module.exports = function(grunt){
       },
       build:{
         files:{
-          'dist/js/billstrap.min.js': 'dist/js/billstrap.min.js'
+          'dist/js/bilstrap.min.js': 'dist/js/bilstrap.min.js'
         }
       }
     },
@@ -51,7 +51,7 @@ module.exports = function(grunt){
       },
       concat: {
         files: {
-          'dist/css/billstrap.css': ['vendor/css/normalize.css', 'src/css/billstrap.css']
+          'dist/css/bilstrap.css': ['vendor/css/normalize.css', 'src/css/bilstrap.css']
         }
       },
       minify: {
