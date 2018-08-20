@@ -1,7 +1,7 @@
 {
   "name": "bilstrap",
   "description": "Responsive grid system base on flex property",
-  "main": "dist/css/bilstrap.css",
+  "main": "css/bilstrap.css",
   "authors": [
     "Ajantha Bandara"
   ],

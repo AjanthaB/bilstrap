@@ -1,81 +1,59 @@
 
 module.exports = function(grunt){
-
-
-  // get the configuration info from package.json ----------------------------
-  // this way we can use things like name and version (pkg.name
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-    // configure the jsHint to validate js files
+    banner: '/*! <%= pkg.name %> ' + 'v:' + '<%= pkg.version %> ' + 'Date: ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
     jshint:{
       options:{
         reporter:require('jshint-stylish') // use jshint-stylish to make our errors look and read
       },
-      // when this task is run, lint the Gruntfile and all js files in src
       build: ['Gruntfile.js', 'src/**/*.js']
     },
-    myth: {
+    uglify: {
       options: {
-        sourcemap: false
+        banner: '<%= banner %>'
       },
-      build: {
-        expand: true,
-        cwd: 'src/css/',
-        src: ['*.css', '!*.min.css'],
-        dest: 'src/css/',
-        ext: '.css'
-      }
-      
-    },
-    uglify:{
-      options:{
-         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+      dist: {
+        src: 'src/js/bilstrap.js',
+        dest: 'js/bilstrap.min.js'
       },
-      build:{
-        files:{
-          'dist/js/bilstrap.min.js': 'dist/js/bilstrap.min.js'
-        }
-      }
     },
-    // compile less stylesheets to css -----------------------------------------
     less:{
       build:{
         files:{
-          'src/css/billstrap.css':"src/css/billstrap.less"
+          'src/css/bilstrap.css':"src/less/bilstrap.less"
         }
       }
     },
-    cssmin:{
-      options:{
-        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+    concat: {
+      options: {
+        separator: ';'
       },
-      concat: {
-        files: {
-          'dist/css/bilstrap.css': ['vendor/css/normalize.css', 'src/css/bilstrap.css']
-        }
-      },
-      minify: {
-        expand: true,
-        cwd: 'dist/css',
-        src: ['*.css', '!*.min.css'],
-        dest: 'dist/css',
-        ext: '.min.css'
+      dist: {
+        src: ['src/css/bilstrap.css', 'vendor/css/normalize.css'],
+        dest: 'css/bilstrap.css'
       }
-    }
+    },
+    cssmin: {
+      compress: {
+        options: {
+          banner: '<%= banner %>'
+        },
+        files: {
+          'css/bilstrap.min.css': ['css/bilstrap.css']
+        }
+      }
+    },
+
   });
 
-  // this default task will go through all configuration (dev and production) in each task
-  grunt.registerTask('default', ['less', 'myth:build', 'cssmin:concat', 'cssmin:minify', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'less', 'concat']);
+  grunt.registerTask('prod', ['jshint', 'uglify', 'less', 'concat', 'cssmin:compress']);
 
-  // ===========================================================================
-  // LOAD GRUNT PLUGINS ========================================================
-  // ===========================================================================
-  // we can only load these if they are in our package.json
-  // make sure you have run npm install so our app can find these
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-myth');
 };
