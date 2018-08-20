@@ -3,7 +3,7 @@
 ## Responsive grid based on flex property
 
 * No depedencies
-* Light weight (14kb)
+* Light weight (12kb)
 
 ## Install
 
