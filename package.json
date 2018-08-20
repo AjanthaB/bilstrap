@@ -5,7 +5,9 @@
   "email": "ajatha.p.bandara@gmail.com",
   "scripts": {
     "build:dev": "grunt",
-    "build:prod": "grunt prod"
+    "build:prod": "grunt prod",
+    "release:npm": "npm publish",
+    "release:bower": "bower register bilstrap http://bilstrap.com"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
