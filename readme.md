@@ -5,7 +5,7 @@
 * No depedencies
 * Light weight (12kb)
 
-#### [Documentation](http://bilstrap.com)
+### [Documentation](http://bilstrap.com)
 
 ## Install
 
