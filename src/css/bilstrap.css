@@ -684,7 +684,11 @@
   background: rgba(255, 255, 255, 0.2);
   border-radius: 100%;
   transform: scale(1, 1) translate(-50%);
+  -webkit-transform: scale(1, 1) translate(-50%);
+  -moz-transform: scale(1, 1) translate(-50%);
   transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
 }
 .btn.bt-light {
   background-color: #e2dddd;
@@ -715,19 +719,55 @@ button {
 @keyframes ripple {
   0% {
     transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
     opacity: 1;
   }
   20% {
     transform: scale(25, 25);
+    -webkit-transform: scale(25, 25);
+    -moz-transform: scale(25, 25);
     opacity: 1;
   }
   100% {
     opacity: 0;
     transform: scale(40, 40);
+    -webkit-transform: scale(40, 40);
+    -moz-transform: scale(40, 40);
+  }
+}
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(40, 40);
+  }
+}
+@-webkit-keyframes ripple {
+  0% {
+    -moz-transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    -moz-transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(40, 40);
   }
 }
 button:focus:not(:active)::after {
   animation: ripple 1s ease-out;
+  -webkit-animation: ripple 1s ease-out;
+  -moz-animation: ripple 1s ease-out;
 }
 .demo-col {
   background: #34c4ac;

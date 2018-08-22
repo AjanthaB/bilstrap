@@ -1,4 +1,4 @@
-.btn, 
+.btn,
 .btn-large,
 .btn-small,
 .btn-floating,
@@ -21,27 +21,22 @@
   z-index: 0;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
-
-  // &.disabled {
+  font-weight: bold; // &.disabled {
   //   pointer-events: none;
   //   box-shadow: none;
   //   cursor: not-allowed;
   //   transform: none !important;
   //   transition: none !important;
   // }
-
   &.btn-lg {
     font-size: 20px;
     width: 150px;
     letter-spacing: 1;
   }
-
   &.btn-sm {
     font-size: 14px;
     width: 75px;
   }
-
   &.bt-waves {
     &::after {
       content: '';
@@ -54,27 +49,30 @@
       background: rgba(255, 255, 255, .2);
       border-radius: 100%;
       transform: scale(1, 1) translate(-50%);
+      -webkit-transform: scale(1, 1) translate(-50%);
+      -moz-transform: scale(1, 1) translate(-50%);
       transform-origin: 50% 50%;
+      -webkit-transform-origin: 50% 50%;
+      -moz-transform-origin: 50% 50%;
     }
   }
-
   &.bt-light {
-    background-color: #e2dddd;;
+    background-color: #e2dddd;
+    ;
     color: #2d4059;
   }
-
   &.bt-dark {
     background-color: #2d4059;
     color: #ffffff;
   }
-
   &.bt-danger {
-    background-color: #ea5455;;
+    background-color: #ea5455;
+    ;
     color: #ffffff;
   }
-
   &.bt-amber {
-    background-color: #ffb400;;
+    background-color: #ffb400;
+    ;
     color: #2d4059;
   }
 }
@@ -94,18 +92,56 @@ button {
 @keyframes ripple {
   0% {
     transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
     opacity: 1;
   }
   20% {
     transform: scale(25, 25);
+    -webkit-transform: scale(25, 25);
+    -moz-transform: scale(25, 25);
     opacity: 1;
   }
   100% {
     opacity: 0;
     transform: scale(40, 40);
+    -webkit-transform: scale(40, 40);
+    -moz-transform: scale(40, 40);
+  }
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(40, 40);
+  }
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    -moz-transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    -moz-transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(40, 40);
   }
 }
 
 button:focus:not(:active)::after {
   animation: ripple 1s ease-out;
+  -webkit-animation: ripple 1s ease-out;
+  -moz-animation: ripple 1s ease-out;
 }
