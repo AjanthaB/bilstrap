@@ -641,13 +641,22 @@
     order: 1;
   }
 }
+button {
+  margin: 0.5em;
+  font-weight: 100;
+  padding: 0.5em 1em;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
 .btn,
+.btn-float,
 .btn-large,
 .btn-small,
-.btn-floating,
-.btn-large,
-.btn-small,
-.btn-flat {
+.btn-flat,
+.btn-outline {
   border: none;
   border-radius: 2px;
   font-size: 14px;
@@ -664,31 +673,40 @@
   font-size: 16px;
   font-weight: bold;
 }
-.btn.btn-lg {
+.btn.btn-large {
   font-size: 20px;
   width: 150px;
   letter-spacing: 1;
 }
-.btn.btn-sm {
+.btn.btn-small {
   font-size: 14px;
   width: 75px;
 }
+.btn.bt-waves {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
 .btn.bt-waves::after {
   content: '';
+  display: block;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
   opacity: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 100%;
-  transform: scale(1, 1) translate(-50%);
-  -webkit-transform: scale(1, 1) translate(-50%);
-  -moz-transform: scale(1, 1) translate(-50%);
-  transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
+  transition: transform 0.5s, opacity 1s;
+}
+.btn.bt-waves:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
 }
 .btn.bt-light {
   background-color: #e2dddd;
@@ -705,69 +723,6 @@
 .btn.bt-amber {
   background-color: #ffb400;
   color: #2d4059;
-}
-button {
-  margin: 0.5em;
-  font-weight: 100;
-  padding: 0.5em 1em;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-  cursor: pointer;
-}
-@keyframes ripple {
-  0% {
-    transform: scale(0, 0);
-    -webkit-transform: scale(0, 0);
-    -moz-transform: scale(0, 0);
-    opacity: 1;
-  }
-  20% {
-    transform: scale(25, 25);
-    -webkit-transform: scale(25, 25);
-    -moz-transform: scale(25, 25);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(40, 40);
-    -webkit-transform: scale(40, 40);
-    -moz-transform: scale(40, 40);
-  }
-}
-@-webkit-keyframes ripple {
-  0% {
-    -webkit-transform: scale(0, 0);
-    opacity: 1;
-  }
-  20% {
-    -webkit-transform: scale(25, 25);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(40, 40);
-  }
-}
-@-webkit-keyframes ripple {
-  0% {
-    -moz-transform: scale(0, 0);
-    opacity: 1;
-  }
-  20% {
-    -moz-transform: scale(25, 25);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -moz-transform: scale(40, 40);
-  }
-}
-button:focus:not(:active)::after {
-  animation: ripple 1s ease-out;
-  -webkit-animation: ripple 1s ease-out;
-  -moz-animation: ripple 1s ease-out;
 }
 .demo-col {
   background: #34c4ac;
