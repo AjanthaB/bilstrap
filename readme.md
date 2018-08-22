@@ -95,8 +95,8 @@ bower install bilstrap
   <div class="col-xs-12">
     <div>
       <button class="btn bt-waves bt-dark">Normal</button>
-      <button class="btn btn-lg bt-waves bt-dark">Large</button>
-      <button class="btn btn-sm bt-waves bt-dark">Small</button>
+      <button class="btn btn-large bt-waves bt-dark">Large</button>
+      <button class="btn btn-small bt-waves bt-dark">Small</button>
     </div>
   </div>
 </div>

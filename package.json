@@ -6,8 +6,7 @@
   "scripts": {
     "build:dev": "grunt",
     "build:prod": "grunt prod",
-    "release:npm": "npm publish",
-    "release:bower": "bower register bilstrap http://bilstrap.com"
+    "release:npm": "npm publish"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
