@@ -2,7 +2,7 @@
 module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-    banner: '/*! <%= pkg.name %> ' + 'v:' + '<%= pkg.version %> ' + 'Date: ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
+    banner: '/*! <%= pkg.name %>' + '.com v:' + '<%= pkg.version %> ' + 'Date: ' + '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
     jshint:{
       options:{
         reporter:require('jshint-stylish') // use jshint-stylish to make our errors look and read
