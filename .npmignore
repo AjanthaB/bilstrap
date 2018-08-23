@@ -5,10 +5,10 @@
 
 Gruntfile.js
 index.html
-bower.jaon
+bower.json
 package.json
 package-lock.json
-postcss.config.json
+postcss.config.js
 webpack.config.js
 CNAME
 .git
